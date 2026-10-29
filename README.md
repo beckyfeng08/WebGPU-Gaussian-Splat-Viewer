@@ -1,14 +1,12 @@
 # Project5-WebGPU-Gaussian-Splat-Viewer
 
-**University of Pennsylvania, CIS 565: GPU Programming and Architecture, Project 5**
-
-* (TODO) YOUR NAME HERE
-* Tested on: (TODO) **Google Chrome 222.2** on
-  Windows 22, i7-2222 @ 2.22GHz 22GB, GTX 222 222MB (Moore 2222 Lab)
+Rebecca Feng
+[LinkedIn](https://www.linkedin.com/in/beckyfeng0803/), [personal website](https://beckyfeng08.github.io/)
+* Tested on: Google Chrome Version 155.0.8059.80 (Official Build) (arm64) on Apple M4 Max
 
 ### Live Demo
 
-[![](img/thumb.png)](http://TODO.github.io/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred)
+[![](img/thumb.png)](https://beckyfeng08.github.io/WebGPU-Gaussian-Splat-Viewer)
 
 ### Demo Video/GIF
 
