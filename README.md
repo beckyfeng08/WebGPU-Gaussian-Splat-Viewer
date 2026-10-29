@@ -4,6 +4,7 @@ Rebecca Feng
 [LinkedIn](https://www.linkedin.com/in/beckyfeng0803/), [personal website](https://beckyfeng08.github.io/)
 * Tested on: Google Chrome Version 155.0.8059.80 (Official Build) (arm64) on Apple M4 Max
 
+https://beckyfeng08.github.io/WebGPU-Gaussian-Splat-Viewer
 ### Live Demo
 
 [![](img/thumb.png)](https://beckyfeng08.github.io/WebGPU-Gaussian-Splat-Viewer)
