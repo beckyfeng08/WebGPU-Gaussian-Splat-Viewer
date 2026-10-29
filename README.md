@@ -13,13 +13,8 @@ https://beckyfeng08.github.io/WebGPU-Gaussian-Splat-Viewer
 
 [![](img/video.mp4)](TODO)
 
-### (TODO: Your README)
-
-*DO NOT* leave the README to the last minute! It is a crucial part of the
-project, and we will not be able to grade you without a good README.
-
-This assignment has a considerable amount of performance analysis compared
-to implementation work. Complete the implementation early to leave time!
+### Overview
+This WebGPU based applications allows users to input a trained gaussian splat file (in the form of a ply) and toggle between viewing the point cloud or as a gaussian splat.
 
 ### Credits
 
