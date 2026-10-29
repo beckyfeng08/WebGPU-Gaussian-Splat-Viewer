@@ -35,12 +35,12 @@ fn vs_main(
     let pos = vec4<f32>(a.x, a.y, b.x, 1.);
 
     // TODO: MVP calculations
-    out.position = pos;
+    out.position = camera.proj * camera.view * pos;
 
     return out;
 }
 
 @fragment
 fn fs_main(in: VertexOutput) -> @location(0) vec4<f32> {
-    return vec4<f32>(1., 0., 0., 1.);
+    return vec4<f32>(1., 1., 0., 1.);
 }
