@@ -1,4 +1,4 @@
-# Project5-WebGPU-Gaussian-Splat-Viewer
+# WebGPU Gaussian Splat Viewer
 
 Rebecca Feng
 [LinkedIn](https://www.linkedin.com/in/beckyfeng0803/), [personal website](https://beckyfeng08.github.io/)
