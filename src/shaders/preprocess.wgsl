@@ -218,7 +218,7 @@ fn compute_cov2D(mean: vec3f, cov3d: mat3x3f) -> mat2x2f
 		0, camera.focal.y / t.z, -(camera.focal.y * t.y) / (t.z * t.z),
 		0, 0, 0);
 
-	let W = mat3x3f( camera.view[0].xyz, camera.view[1].xyz, camera.view[2].xyz); 
+	let W = transpose(mat3x3f( camera.view[0].xyz, camera.view[1].xyz, camera.view[2].xyz)); 
 
     let T = W * J;
     let cov = transpose(T) * transpose(cov3d) * T;
@@ -265,8 +265,6 @@ fn preprocess(@builtin(global_invocation_id) gid: vec3<u32>, @builtin(num_workgr
      // out of camera bounds, cull
     if (abs(ndc.x) > 1.2 || abs(ndc.y) > 1.2 || ndc.z < 0 || ndc.z > 1) { return; }
 
-    let i = atomicAdd(&sort_infos.keys_size, 1u); // add this splat to number of splats in render pass
-
     // computing cov
     let cov3d = compute_cov3D(g, render_settings.gaussian_scaling);
     let cov2D = compute_cov2D(worldpos.xyz, cov3d);
@@ -274,6 +272,9 @@ fn preprocess(@builtin(global_invocation_id) gid: vec3<u32>, @builtin(num_workgr
     // computing 2d conic, max radius, and max quad size
     let det = (cov2D[0][0] * cov2D[1][1] - cov2D[0][1] * cov2D[0][1]);
     if (det <= 0.f) {return;}
+
+    let i = atomicAdd(&sort_infos.keys_size, 1u); // add this splat to number of splats in render pass
+
 
     // get conic
     let conic = compute_conic(det, cov2D);

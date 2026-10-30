@@ -56,12 +56,12 @@ fn vs_main(@builtin(vertex_index) in_vertex_index: u32,
     let s = splats[i];
 
     // take ratio of camera viewport dims
-    let combo = corners[in_vertex_index] * s.radius * 2.0 / camera.viewport;
+    let combo = corners[in_vertex_index] * s.radius / camera.viewport;
 
     out.position = vec4f(s.ndc.xy + combo, s.ndc.z, 1.0);
     out.color = s.color;
     out.conic = s.conic;
-    out.center = vec2f((s.ndc.x * 0.5 + 0.5) * camera.viewport.x, (0.5 - s.ndc.y * 0.5) * camera.viewport.y);
+    out.center = vec2f((s.ndc.x * 0.5 + 0.5) * camera.viewport.x, (0.5 - s.ndc.y * 0.5) * camera.viewport.y); // in pixel space
 
     return out;
 }

@@ -35,6 +35,20 @@ For gaussian renderer, how does changing the workgroup-size affect performance? 
 Does view-frustum culling give performance improvement? Why do you think this is?
 Does number of guassians affect performance? Why do you think this is? -->
 
+I tested how long it took for a single pass for the gaussian and point cloud rendering methods individually, given our bike and bonsai ply files. The pass includes the preprocess and render passes. These were averaged over 200 frames, starting at the 300th frame:
+| Renderer | bonsai (ms) | bike (ms) | cookie (ms) | star cookie (ms) |
+|---|---|---|---|---|
+| Gaussian | 5.78 | 7.79 | 4.79 | 4.21 |
+| Point | 2.18 | 5.31 | 2.31 | 2.91 |
+
+![](images/graph.png)
+
+Overall as we increase the number of points in our scene, it takes a longer amount of time to process it per frame, as expected. Furthermore, it takes a noticeably shorter time to render the points as opposed to the gaussians (since we don't need to do all those calcucations in the fragment shader, and we also don't need two separate passes during each frame).
+
+For our gaussian renderer, changing the workgroup-size affects performance in that blah blah blah.
+
+In our code, we culled gaussians when they are not in our scene so that our scene runs faster. We see that it is the case below for our bike scene... 
+
 
 ### Credits
 
